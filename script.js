@@ -85,26 +85,26 @@ function generatePassword() {
   var result = [];
   
   var possibleCharacters = [];
-  var gauranteedCharacters = [];
+  var guaranteedCharacters = [];
   // If they do want lowercase letters, we concatenate that option array into the empty bowl array. If not, we move on.
-  if (options.hasLowerCasedCharacters) {
+  if (options.haslowerCasedCharacters) {
     possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
-    gauranteedCharacters.push(getRandom(lowerCasedCharacters));
+    guaranteedCharacters.push(getRandom(lowerCasedCharacters));
   };
   // If they do want uppercase letters, we concatenate that option array into the empty bowl array. If not, we move on.
   if (options.hasUpperCasedCharacters) {
     possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
-    gauranteedCharacters.push(getRandom(upperCasedCharacters));
+    guaranteedCharacters.push(getRandom(upperCasedCharacters));
   };
   // If they do want special characters, we concatenate that option array into the empty bowl array. If not, we move on.
   if (options.hasSpecialCharacters) {
     possibleCharacters = possibleCharacters.concat(specialCharacters);
-    gauranteedCharacters.push(getRandom(specialCharacters));
+    guaranteedCharacters.push(getRandom(specialCharacters));
   };
   // If they do want numbers, we concatenate that option array into the empty bowl array. If not, we move on.
   if (options.hasNumericCharacters) {
     possibleCharacters = possibleCharacters.concat(numericCharacters);
-    gauranteedCharacters.push(getRandom(numericCharacters));
+    guaranteedCharacters.push(getRandom(numericCharacters));
   };
   // For loop through array * character count
   for (var i = 0; i < options.length; i++) {
@@ -113,8 +113,8 @@ function generatePassword() {
     result.push(possibleCharacter);
   }
   // Apply arrays into 'result' array - second empty bowl
-  for (var i = 0; i < gauranteedCharacters.length; i++) {
-    result[i] = gauranteedCharacters[i];
+  for (var i = 0; i < guaranteedCharacters.length; i++) {
+    result[i] = guaranteedCharacters[i];
   }
   // String results
   return result.join('');
@@ -124,8 +124,6 @@ function generatePassword() {
 var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
-  
-  console.log("Inside writePassword")
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
