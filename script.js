@@ -87,7 +87,7 @@ function generatePassword() {
   var possibleCharacters = [];
   var guaranteedCharacters = [];
   // If they do want lowercase letters, we concatenate that option array into the empty bowl array. If not, we move on.
-  if (options.haslowerCasedCharacters) {
+  if (options.hasLowerCasedCharacters) {
     possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
     guaranteedCharacters.push(getRandom(lowerCasedCharacters));
   };
